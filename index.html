@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>tmpUI App</title>
+    <meta name="description" content="start">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+
+    <script type="text/javascript" src="/tmpui.checker.js"></script>
+    <script type="text/javascript" src="/tmpui.js"></script>
+
+    <script type="text/javascript">
+        var app = new tmpUI({
+            // "googleAnalytics": "G-4DGYKM9EHS",
+            // "index": "/",
+            "siteRoot": "/HN",
+            "loadingIcon": "/tpl/img/logo.png",
+            "loadingPage": true,
+            "dynamicRouter": "route",
+            "loadingProgress": true,
+            "languageDefault": "cn",
+            "language": {
+                "en": "/lang/en.json",
+                "cn": "/lang/cn.json",
+            },
+            "preload": {
+                "index": {
+                    "/static/js/jquery.min.js": {"type": "js", "reload": false},
+                    "/tpl/plugin/bootstrap4/bootstrap.bundle.min.js": {"type": "js", "reload": false},
+                    "/tpl/plugin/bootstrap4/bootstrap.min.css": {"type": "css", "reload": false}
+                },
+                "bootstrap": {
+                    "/tpl/css/reset.css": {"type": "css", "reload": false},
+                },
+                "js": {
+                    "/js/action.js": {"type": "js", "reload": false}
+                },
+                "core": {
+                    "/static/core/function.js": {"type": "js", "reload": false},
+                    "/static/core/hn_core.js": {"type": "js", "reload": false},
+                    "/static/core/hn_user.js": {"type": "js", "reload": false},
+                    "/static/core/init.js": {"type": "js", "reload": false}
+                },
+                "admin_ui": {}
+            },
+            "append": {
+                "index": {
+                    "/tpl/include/head.html": {"type": "html", "target": {"type": "id", "val": "tpl_header"}},
+                    "/tpl/include/foot.html": {"type": "html", "target": {"type": "id", "val": "tpl_footer"}}
+                },
+                "pageReady": {
+                    "/static/core/page.signout.js": {"type": "js"}
+                }
+            },
+            "path": {
+                "/": {
+                    "title": "H and N login !",
+                    "preload": ["index", "bootstrap", "js", "core"],
+                    "append": ["index", "pageReady"],
+                    "body": {
+                        "/tpl/index.html": {"type": "html", "target": {"type": "body"}}
+                    }
+                },
+                "/admin/": {
+                    "title": "H and N ",
+                    "preload": ["index", "admin_ui", "core"],
+                    "append": ["index"],
+                    "body": {
+                        "/tpl/admin.html": {"type": "html", "target": {"type": "body"}},
+                        // "../tpl/admin/header.html": {"type": "html", "target": {"type": "id", "val": "tpl_header"}},
+                        // "../tpl/admin/footer.html": {"type": "html", "target": {"type": "id", "val": "tpl_footer"}},
+                        // "../tpl/admin/nav.html": { "type": "html", "target": { "type": "id", "val": "tpl_nav" }}
+                    }
+                }
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="tmpui"></div>
+<div id="tmpui_body" class="d-flex flex-column"></div>
+</body>
+
+</html>

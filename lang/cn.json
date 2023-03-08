@@ -1,0 +1,12 @@
+{
+    "index_title":"基于 URL 的事件触发",
+    "index_page1_title":"这是第一个页面",
+    "index_page2_title":"这是第二个页面",
+    "index_action_content":"",
+    "index_btn_goto_page1":"载入第一个页面",
+    "index_btn_goto_page2":"载入第二个页面",
+    "index_btn_return":"返回首页",
+    "index_switch_btn_cn":"切换到中文",
+    "index_switch_btn_en":"Switch to English",
+    "index_do_login_btn":"登录"
+}

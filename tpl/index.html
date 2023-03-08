@@ -1,0 +1,61 @@
+<div id="tpl_header"></div>
+<div class="container d-flex flex-grow-3">
+    <div class="align-self-center w-100">
+        <!--代码部分-->
+        <form class="form-horizontal">
+            <div id="msgbox" class="card-alert alert alert-success mb-0 text-center">
+                Have a nice day.
+            </div>
+            <div class="form-group">
+                <!--样式control-label使内容居右-->
+                <label for="username" class="col-sm-3 control-label">帐号：</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="username" placeholder="请输入帐号" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password" class="col-sm-3 control-label">密码：</label>
+                <div class="col-sm-9">
+                    <input type="password" class="form-control" id="password" placeholder="请输入密码" />
+                </div>
+            </div>
+            <!-- <div class="form-group"> -->
+                <!-- <div class="col-sm-9 col-sm-offset-3">
+        
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" /> 记住密码
+                        </label>
+                    </div>
+                </div> -->
+            <!-- </div> -->
+            <button class="btn btn-primary btn-lg" i18n="index_do_login_btn" onclick="hnUser.signIn();" onkeyup="if(event.keyCode==13){hnUser.signIn();}">登录</button>
+            <!-- <div class="form-group">
+                <div class="col-sm-9 col-sm-offset-3">
+                    <button type="submit" class="btn btn-primary btn-sm">登录</button> -->
+                    <!-- <a href="#" class="btn btn-link btn-sm">忘记密码？</a> -->
+                <!-- </div> -->
+            <!-- </div> -->
+            <div id="init_signin"></div>
+        </form>
+
+        <!-- <div class="text-center display-4 mb-4">
+            default
+        </div> -->
+        <!-- <p class="lead text-center" i18n="index_a1">
+            . 2222
+        </p>
+        <div class="text-center">
+            <a class="btn btn-success" href="/doc/tmpUI User's Guide.cn.preview.pdf">下载 tmpUI 使用指南</a>
+        </div> -->
+    </div>
+</div> 
+<div class="container d-flex flex-grow-1">
+    <div id="tpl_nav" class="rounded d-none d-sm-block"></div>
+</div>
+
+<div id="tpl_footer"></div>
+<script>
+    $('title').attr('i18n', 'title_index');
+    $('meta[name=description]').attr('i18n', 'des_index');
+</script>
