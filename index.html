@@ -28,7 +28,7 @@
             },
             "preload": {
                 "index": {
-                    "/static/js/jquery.min.js": {"type": "js", "reload": false},
+                    "/static/js/jquery-3.6.4.js": {"type": "js", "reload": false},
                     "/tpl/plugin/bootstrap4/bootstrap.bundle.min.js": {"type": "js", "reload": false},
                     "/tpl/plugin/bootstrap4/bootstrap.min.css": {"type": "css", "reload": false}
                 },
@@ -59,20 +59,20 @@
                 "/": {
                     "title": "H and N login !",
                     "preload": ["index", "bootstrap", "js", "core"],
-                    "append": ["index", "pageReady"],
+                    "append": ["index"],
                     "body": {
                         "/tpl/index.html": {"type": "html", "target": {"type": "body"}}
                     }
                 },
                 "/admin/": {
                     "title": "H and N ",
-                    "preload": ["index", "admin_ui", "core"],
-                    "append": ["index"],
+                    "preload": ["index", "core"],
+                    // "append": ["index"],
                     "body": {
                         "/tpl/admin.html": {"type": "html", "target": {"type": "body"}},
-                        // "../tpl/admin/header.html": {"type": "html", "target": {"type": "id", "val": "tpl_header"}},
-                        // "../tpl/admin/footer.html": {"type": "html", "target": {"type": "id", "val": "tpl_footer"}},
-                        // "../tpl/admin/nav.html": { "type": "html", "target": { "type": "id", "val": "tpl_nav" }}
+                        "/tpl/admin/header.html": {"type": "html", "target": {"type": "id", "val": "tpl_header"}},
+                        "/tpl/admin/footer.html": {"type": "html", "target": {"type": "id", "val": "tpl_footer"}},
+                        "/tpl/admin/nav.html": { "type": "html", "target": { "type": "id", "val": "tpl_nav" }}
                     }
                 }
             }

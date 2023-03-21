@@ -16,10 +16,10 @@ class hn_core {
     api_hndns = 'https://hn.link/openapi/v1/hndns'
     api_hnping = 'https://hn.link/openapi/v1/hnping'
     // api_user = 'https://127.0.0.1:5555/openapi/v1/user'
-    api_user = 'http://127.0.0.1:4523/m1/2369771-0-default/openapi/v1/user'
+    api_user = 'http://localhost:8080/api/v1/user'
     api_hnserver = 'https://hn.link/openapi/v1/hnserver'
     // api_token = 'https://hn.link/openapi/v1/token'
-    api_token = 'http://127.0.0.1:4523/m1/2369771-0-default/openapi/v1/token'
+    api_token = 'http://localhost:8080/api/v1/token'
     api_prophet = 'https://hn.link/openapi/v1/prophet'
     clipboard = null
 
@@ -27,9 +27,9 @@ class hn_core {
 
     init() {
 
-        if (getQueryVariable('rel') !== false) {
-            localStorage.setItem('rel', getQueryVariable('rel'));
-        }
+        // if (getQueryVariable('rel') !== false) {
+        //     localStorage.setItem('rel', getQueryVariable('rel'));
+        // }
         this.initGetToken(() => {
             this.userInit();
         });
@@ -121,7 +121,7 @@ class hn_core {
                 cb();
             }
         } else {
-            $.post(this.api_token, (rsp) => {
+                $.post(this.api_token, (rsp) => {
                 if (rsp.length === 32) {
                     this.token = rsp;
                     localStorage.setItem('app_token', rsp);

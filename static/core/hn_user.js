@@ -156,11 +156,10 @@ class hn_user {
         $('#msgbox').removeClass('alert-danger');
         $('#msgbox').addClass('alert-primary');
         $('#submit').addClass('disabled');
+        debugger
          $.post(this.core.api_user, { token: this.core.token, username: username, password: password, action: 'login' }, (rsp) => {
              debugger
-            app.log("@@@signIn OK1");
             if (rsp.status === 1) {
-                app.log("@@@signIn OK");
                 $('#msgbox').removeClass('alert-primary');
                 $('#msgbox').removeClass('alert-danger');
                 $('#msgbox').addClass('alert-success');
@@ -169,8 +168,6 @@ class hn_user {
                 this.core.userInit(()=>{
                     app.open('/admin/');
                 });
-                // this.core.userInit();
-                // app.open('/admin/');
             } else {
                 debugger
                 $('#msgbox').html(rsp.data);
